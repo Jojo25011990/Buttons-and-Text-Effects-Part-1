@@ -1,0 +1,221 @@
+// **** GENERAL ****
+
+.btn {
+	font: {
+		size: 3rem;
+		weight: 700;
+	}
+
+	@extend .body;
+	display: inline-block;
+	position: relative;
+	color: $color-btn01;
+	padding: 1.5rem 3rem;
+	border-radius: 0.5rem;
+	transition: all 0.2s ease;
+	cursor: pointer;
+}
+
+// **** BUTTONS 01 && SECTION 01 ****
+
+.btn--dark-01 {
+	background-color: $color-btn01--dark;
+	border: 0.1rem solid $color-btn01--dark;
+
+	&:hover {
+		background-color: darken($color-btn01--dark, 15%);
+		border: 0.1rem solid darken($color-btn01--dark, 15%);
+	}
+
+	&:active {
+		animation: shake 0.255s linear 2;
+	}
+}
+
+@keyframes shake {
+	0%,
+	100% {
+		transform: translateX(-0.5rem);
+	}
+
+	25% {
+		transform: translateX(0.5rem);
+	}
+
+	50% {
+		transform: translateX(-0.5rem);
+	}
+
+	75% {
+		transform: translateX(0.5rem);
+	}
+}
+
+.btn--dark-02 {
+	background-color: $color-btn02--dark;
+	border: 0.1rem solid $color-btn02--dark;
+
+	&:hover {
+		background-color: lighten($color-btn02--dark, 15%);
+	}
+}
+
+@keyframes scale {
+	from {
+		transform: scale(0);
+	}
+
+	to {
+		transform: scale(1);
+	}
+}
+
+// **** JS class && dark button 02 ****
+
+.active {
+	animation: scale 0.8s ease-in-out 1;
+}
+
+// **** BUTTONS 02 && SECTION 02 ****
+
+.btn--light-01 {
+	background-color: lighten($textShadow-color-02, 10%);
+
+	&::before {
+		position: absolute;
+		content: "\00bb";
+		top: 0;
+		right: 0;
+		transform: translate(-50%, 50%);
+		transition: all 0.2s ease;
+		opacity: 0;
+	}
+
+	&:hover {
+		padding: 1.5rem 4.5rem 1.5rem 1.5rem;
+	}
+
+	&:hover::before {
+		transform: translate(-140%, 50%);
+		opacity: 1;
+	}
+}
+
+.btn--light-02 {
+	border: 0.2rem solid #00b3b4;
+	background-color: #00b3b4;
+
+	background-image: url("../img/background\ pattern.png");
+	background-size: 4rem 4rem;
+
+	text-shadow: 0 0 0.1rem $textShadow-color-02;
+
+	&:hover {
+		animation: animated-img 1.5s linear infinite;
+	}
+
+	&:active {
+		transform: scale(1.5);
+	}
+}
+
+@keyframes animated-img {
+	from {
+		background-position: 0 0;
+	}
+
+	to {
+		background-position: 4rem 0;
+	}
+}
+
+// **** BUTTONS 03 && SECTION 03 ****
+
+.btn--dark-03 {
+	color: $color-btn01;
+
+	background-image: linear-gradient(
+		to right,
+		#00d2ff 0%,
+		#3a7bd5 51%,
+		#00d2ff 100%
+	);
+	background-size: 200% auto;
+	border-image: linear-gradient(
+		to right,
+		#00d2ff 0%,
+		#3a7bd5 51%,
+		#00d2ff 100%
+	);
+	border-radius: 0;
+
+	&:hover {
+		background-position: right center; /* change the direction of the change here */
+		color: #fff;
+	}
+
+	&:active {
+		border-radius: 1rem;
+	}
+}
+
+// Whole button is defined using a mixin.
+.btn--dark-04 {
+	@include btnDark-04();
+}
+
+// **** BUTTONS 04 && SECTION 04 ****
+.btn--light-03 {
+	position: relative;
+	display: inline-block;
+
+	background-color: $boxShadow-color-02;
+
+	text-shadow: 0 -1px 0 $boxShadow-color-01;
+	color: white;
+	border: solid 1px darken($boxShadow-color-01, 15%);
+	border-radius: 100%;
+	height: 15rem;
+	width: 15rem;
+	z-index: 4;
+
+	outline: none;
+
+	box-shadow: 0 0.7rem 0 darken($boxShadow-color-01, 15%);
+
+	&:hover {
+		background-color: darken($boxShadow-color-01, 2%);
+	}
+
+	&:active {
+		background-color: lighten($boxShadow-color-01, 5%);
+
+		transform: translateY(0.3rem);
+
+		box-shadow: 0 0.3rem 0 darken($boxShadow-color-01, 15%);
+	}
+}
+
+.btn--light-04 {
+	background-color: $color-btn03--dark;
+	border-radius: 1rem;
+	border: none;
+	outline-offset: 0.6rem;
+	padding: 0;
+	transition: all 0.5s ease-in-out;
+
+	&-span {
+		display: block;
+		padding: 1.5rem 3rem;
+		border-radius: 1rem;
+		font-size: 1.5em;
+		background-color: $color-btn04--dark;
+		color: #fff;
+		text-transform: uppercase;
+		transform: translateY(-0.7rem);
+	}
+
+	&:active &-span {
+		transform: translateY(-0.2rem);
+	}
+}

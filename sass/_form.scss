@@ -1,0 +1,62 @@
+// **** FORM && BUTTON 02 ****
+
+.toggle-02 {
+	font-size: 2rem;
+	box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.2);
+
+	&__input {
+		display: none;
+	}
+
+	&__button {
+		@include toggle-02--button();
+
+		&::before {
+			@include toggle-02--buttonBefore();
+		}
+	}
+}
+
+.toggle-02__input:checked + .toggle-02__button {
+	color: $color-btn01--dark;
+	background-color: $color-btn01;
+}
+
+.toggle-02__input:checked + .toggle-02__button::before {
+	background-color: $color-btn01--dark;
+}
+
+// **** FORM && BUTTON 01 ****
+
+.toggle-01 {
+	font-size: 1rem;
+	box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.2);
+	font-family: "Roboto", sans-serif;
+	font-weight: 500;
+	cursor: pointer;
+
+	&__input {
+		display: none;
+	}
+
+	&__button {
+		@include toggle-01--button();
+
+		&::before {
+			@include toggle-01--buttonBefore();
+		}
+	}
+}
+
+.toggle-01__input:checked + .toggle-01__button {
+	background-color: $color-btn01--dark;
+}
+
+.toggle-01__input:checked + .toggle-01__button::before {
+	background-color: $color-btn01;
+	color: $color-btn01--dark;
+	content: "CSS";
+	transform: translateY(1.1rem) translateX(11.2rem);
+	margin-right: 0.5rem;
+	// left: 8rem;
+}

@@ -1,0 +1,66 @@
+// **** H1 && HEADER ****
+
+.heading__primary {
+	letter-spacing: -0.5rem;
+	color: $heading-color;
+	@include headingShadowText();
+	// transform: scale(1.1);
+
+	font: {
+		size: 18rem;
+		weight: 900;
+	}
+
+	@media (max-width: 840px) {
+		font-size: 15rem;
+	}
+
+	@media (max-width: 560px) {
+		font-size: 10rem;
+	}
+}
+
+// **** HEADING 01 && SECTION 01 ****
+
+.heading__secondary-01 {
+	// *** TEXT SHADOW ***
+	//  https://www.codesdope.com/blog/article/25-creative-css3-text-shadow-effects-you-cant-miss/
+
+	text-shadow: 0 2px 2px #dfdfdf, -2px 5px 1px #b8b8b8, -4px 8px 0px #979797,
+		-6px 11px 0px #747474, -8px 14px 0px #565656, -10px 17px 0px #343434,
+		-12px 20px 0px #171717, -14px 23px 0px lighten(#000, 10%);
+}
+
+// **** HEADING 02 && SECTION 02 ****
+
+.heading__secondary-02 {
+	color: transparent;
+	font-style: italic;
+	letter-spacing: 0.5rem;
+	-webkit-text-stroke-color: lighten($textShadow-color-02, 10%);
+	-webkit-text-stroke-width: 1rem;
+}
+
+// **** HEADING 03 && SECTION 03 ****
+
+.heading__secondary-03 {
+	color: $textShadow-color-03;
+
+	text-shadow: 0.4rem 0.4rem 0 $textShadow-color-02,
+		-0.4rem 0 0 $textShadow-color-02, 0.7rem 0.4rem 0 $color-btn01;
+}
+
+// **** HEADING 04 && SECTION 04 ****
+
+.heading__secondary-04 {
+	color: lighten($textShadow-color-04, 5%);
+	-webkit-text-stroke: 0.1rem lighten($textShadow-color-02, 10%);
+	text-shadow: 0 0.4rem 0.4rem lighten($textShadow-color-02, 10%);
+}
+
+// **** HEADING 05 && SECTION 05 ****
+
+.heading__secondary-05 {
+	color: $section-darkBg-color;
+	@include shadowText-heading05();
+}

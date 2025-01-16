@@ -1,0 +1,92 @@
+// **** H1 && HEADER ****
+@mixin headingShadowText() {
+	text-shadow: 0.5rem 0.5rem 0 #ffb650, 1rem 1rem 0 #ffd662,
+		1.5rem 1.5rem 0 #ff80bf, 2rem 2rem 0 #ef5097, 2.5rem 2.5rem 0 #6868ac,
+		3rem 3rem 0 #90b1e0;
+}
+
+// **** BUTTONS 03 && SECTION 03 ****
+
+@mixin btnDark-04 {
+	background-color: rgba(111, 76, 255, 0.15);
+	color: rgba(255, 255, 255, 0.8);
+	border: 0.1rem solid rgba(111, 76, 255, 0.25);
+	border-radius: 0;
+
+	&:hover {
+		background-color: rgba(111, 76, 255, 0.35);
+		color: rgba(255, 255, 255, 0.9);
+		border: 0.1rem solid rgba(111, 76, 255, 0.5);
+		box-shadow: 0 0 2rem 0 rgba(111, 76, 255, 0.5);
+	}
+}
+
+@mixin shadowText-heading05 {
+	text-shadow: -1px 1px 0 #41ba45, 2px 1px 0 #c63d2b, 2px 0px 0 #42afac,
+		-2px -1px 0 #c6c23f;
+}
+
+@mixin section-darkBg-color {
+	background-color: lighten($color: #000000, $amount: 10%);
+}
+
+// Mixins for form, form buttons, form inputs
+
+// **** Button 01 ****
+
+@mixin toggle-01--button() {
+	position: relative;
+	display: block;
+	background-color: lighten(red, 10%);
+	width: 18rem;
+	height: 6rem;
+	transition: all 0.3s ease;
+	border-radius: 0.5rem;
+}
+
+@mixin toggle-01--buttonBefore() {
+	display: inline-block;
+	content: "Only";
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	font-size: 2rem;
+
+	background-color: $color-btn01;
+	padding: 1rem;
+	margin-left: 0.5rem;
+	transform: translateY(1.1rem);
+	transition: all 0.3s ease;
+	color: lighten(red, 10%);
+}
+
+// **** Button 02 ****
+
+@mixin toggle-02--button() {
+	font: {
+		size: 3rem;
+		weight: 700;
+	}
+
+	position: relative;
+	display: inline-block;
+	color: $color-btn01;
+	padding: 1.5rem 3rem;
+	padding-left: 4rem;
+	border-radius: 0.5rem;
+	transition: all 0.2s ease;
+	cursor: pointer;
+	background-color: $color-btn01--dark;
+}
+
+@mixin toggle-02--buttonBefore() {
+	content: "";
+	position: absolute;
+	top: 2.5rem;
+	left: 1.7rem;
+	background-color: $textShadow-color-01;
+	width: 1rem;
+	height: 1rem;
+	border-radius: 100%;
+}
